@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using API.Commons;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
@@ -32,7 +33,7 @@ namespace APIWhoSayNi.Controllers
                     new Claim(ClaimTypes.SerialNumber, password)
                 };
 
-                var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["SecurityKey"]));
+                var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(CommonConstants.SecurityKey));
                 var credential = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
                 var token = new JwtSecurityToken(
                     issuer: "APIWhoSayNi",

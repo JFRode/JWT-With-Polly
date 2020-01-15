@@ -15,4 +15,8 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.0.0" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.6.0" />
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\API.Commons\API.Commons.csproj" />
+  </ItemGroup>
 </Project>
