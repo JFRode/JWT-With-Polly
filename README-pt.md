@@ -1,7 +1,5 @@
 # JWT-With-Polly
-Fazendo um Refresh do Token JWT de forma resiliente com Polly
-
-[Versão em inglês](https://github.com/JFRode/JWT-With-Polly/blob/master/README.md)
+[English version](https://github.com/JFRode/JWT-With-Polly/blob/master/README.md)
 
 [Visualize apenas este arquivo se estiver com pressa](https://github.com/JFRode/JWT-With-Polly/blob/master/APIClient/Clients/APIWhoSayNiClient.cs)
 
@@ -28,7 +26,7 @@ Dentro da function da Policy configurada, realizamos a atualização (Refresh) d
 # Tentativa falha e motivo
 
 Você deve se perguntar, por que não configurei a Policy diretamente na classe **startup** como as demais politicas?
-Infelizmente não é tão simples assim e o código abaixo apesar de belo não funciona. No começo acreditava que o Retry executava antes do que estava dentro da funcion, e realmente pode ocorrer se você não explicitar **async** antes dela (Ref01). Entretanto o código abaixo não funciona porque mesmo que o token sejam atualizado o método que monta a requisição não é reexecutado, o retry é feito exatamente com a mesma requisição que havia sido feita antes da falha, ou seja o token ainda continua o mesmo desatualizado, fazendo com que esse código seja inútil.
+Infelizmente não é tão simples assim e o código abaixo apesar de belo não funciona. No começo acreditava que o Retry executava antes do que estava dentro da function, e realmente pode ocorrer se você não explicitar **async** antes dela (Ref01). Entretanto o código abaixo não funciona porque mesmo que o token sejam atualizado o método que monta a requisição não é reexecutado, o retry é feito exatamente com a mesma requisição que havia sido feita antes da falha, ou seja o token ainda continua o mesmo desatualizado, fazendo com que esse código seja inútil.
 
 ```
 private static IAsyncPolicy<HttpResponseMessage> GetUnauthorizedPolicy(IServiceCollection services) =>
