@@ -1,5 +1,4 @@
 # JWT-With-Polly
-[English version](https://github.com/JFRode/JWT-With-Polly/blob/master/README.md)
 
 [Visualize apenas este arquivo se estiver com pressa](https://github.com/JFRode/JWT-With-Polly/blob/master/APIClient/Clients/APIWhoSayNiClient.cs)
 
