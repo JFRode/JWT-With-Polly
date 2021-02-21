@@ -3,7 +3,7 @@
 
 [Visualize apenas este arquivo se estiver com pressa](https://github.com/JFRode/JWT-With-Polly/blob/master/APIClient/Clients/APIWhoSayNiClient.cs)
 
-Este repositório serve como um artigo de como aproveitar a funcionalidade de Retry do Polly para atualizar automaticamente o Token do JWT, quando necessário.
+Este repositório serve como um artigo de como aproveitar a funcionalidade de Retry do Polly para atualizar automaticamente o Token do JWT, quando necessário. Isso não significa que seja uma boa prática, mas um experimento que fiz.
 
 **O que é o Polly?:** é uma biblioteca de resiliência para .NET onde o desenvolvedor pode implementar políticas para tratamento de falhas na comunicação com uma API por exemplo. Entre as politicas principais estão Retry, Circuit breaker, Fallback etc. Você pode estar verificando a implementação de uma delas [neste artigo da Microsoft](https://docs.microsoft.com/pt-br/dotnet/architecture/microservices/implement-resilient-applications/implement-http-call-retries-exponential-backoff-polly).
 
